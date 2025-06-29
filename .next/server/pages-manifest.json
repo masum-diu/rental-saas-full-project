@@ -2,7 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/property": "pages/property.js",
+  "/api/tenant": "pages/api/tenant.js",
   "/api/property": "pages/api/property.js",
-  "/property/add": "pages/property/add.js"
+  "/api/payment": "pages/api/payment.js"
 }

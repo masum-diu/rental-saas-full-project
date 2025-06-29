@@ -1,9 +1,13 @@
-
+import type { NextApiRequest, NextApiResponse } from "next";
 import { PrismaClient } from "@prisma/client";
+
 const prisma = new PrismaClient();
 
-export default async function handler(req, res) {
-  const id = parseInt(req.query.id);
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const id = parseInt(req.query.id as string); // 🔹 req.query.id টাইপ string | string[] হয়, তাই cast করতে হবে
 
   if (req.method === "GET") {
     const item = await prisma.maintenance.findUnique({ where: { id } });

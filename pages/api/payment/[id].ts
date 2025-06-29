@@ -8,6 +8,7 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     const item = await prisma.payment.findUnique({ where: { id } });
     if (!item) return res.status(404).json({ message: "Not found" });
+    console.log(item)
     return res.status(200).json(item);
   }
 

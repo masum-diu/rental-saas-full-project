@@ -4,7 +4,6 @@ const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
   const id = parseInt(req.query.id);
-
   if (req.method === "GET") {
     const item = await prisma.tenant.findUnique({ where: { id } });
     if (!item) return res.status(404).json({ message: "Not found" });
